@@ -1,0 +1,34 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", activities_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_activity_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Activities
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.activity.name", :default => t("activerecord.labels.name", :default => "Name"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @activities.each do |activity|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = activity.id
+            %td
+              = link_to activity.name, activity_path(activity)
+            %td
+              = show_date_time activity.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", activity_path(activity)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_activity_path(activity)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", activity_path(activity), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+        = paginate @activities
+- content_for :sidebar, render(:partial => 'sidebar')

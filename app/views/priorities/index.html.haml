@@ -1,0 +1,34 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active= link_to "#{t("web-app-theme.list", :default => "List")}", priorities_path
+      %li= link_to "#{t("web-app-theme.new", :default => "New")}", new_priority_path
+  .content
+    %h2.title
+      = t("web-app-theme.all", :default => "All")
+      Priorities
+    .inner
+      %table.table
+        %tr
+          %th.first ID
+          %th
+            = t("activerecord.attributes.priority.name", :default => t("activerecord.labels.name", :default => "Name"))
+          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th.last &nbsp;
+        - @priorities.each do |priority|
+          %tr{:class => cycle("odd", "even")}
+            %td
+              = priority.id
+            %td
+              = link_to priority.name, priority_path(priority)
+            %td
+              = show_date_time priority.created_at
+            %td.last
+              = link_to "#{t("web-app-theme.show", :default => "Show")}", priority_path(priority)
+              |
+              \#{link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_priority_path(priority)} |
+              \#{link_to "#{t("web-app-theme.delete", :default => "Delete")}", priority_path(priority), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}"}
+      .actions-bar.wat-cf
+        .actions
+        = paginate @priorities
+- content_for :sidebar, render(:partial => 'sidebar')

@@ -1,0 +1,19 @@
+#block-text.block
+  .content
+    %h2.title Home
+    .inner
+      %p.first
+        = show_activity_count @activity_count
+      %p.first
+        %table.table
+          %tr
+            %th.first Status
+            %th.last Quantity
+          - @activity_hash.each do |status, list|
+            %tr
+              %td
+                = status
+              %td
+                = list.size.to_s
+
+- content_for :sidebar, render(:partial => 'sidebar')
