@@ -4,16 +4,40 @@
     .inner
       %p.first
         = show_activity_count @activity_count
-      %p.first
-        %table.table
-          %tr
-            %th.first Status
-            %th.last Quantity
-          - @activity_hash.each do |status, list|
+        = current_user.email
+    
+    %h2.title Your Activities
+    .inner
+      - if @activity_count.size > 0
+        %p.first
+          %table.table
             %tr
-              %td
-                = status
-              %td
-                = list.size.to_s
+              %th.first Status
+              %th.last Quantity
+            - @activity_hash.each do |status, list|
+              %tr
+                %td
+                  = status
+                %td
+                  = list.size.to_s
+
+    %h2.title Activities Ending Today
+    .inner
+      - if @activities_end_today.size > 0
+        %p.first
+          %table.table
+            %tr
+              %th.first Name
+              %th.first Status
+              %th.last Priority
+            - @activities_end_today.each do |activity|
+              %tr
+                %td
+                  = activity.name
+                %td
+                  = activity.status.name
+                %td
+                  = activity.priority.name
+            
 
 - content_for :sidebar, render(:partial => 'sidebar')

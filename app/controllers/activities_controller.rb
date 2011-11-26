@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     #@activities = Activity.all
-	  @activities = Activity.where("user_id = ?",current_user.id).page(params[:page])
+	  @activities = Activity.where("user_id = ?", current_user.id).page(params[:page])
 	  
     respond_to do |format|
       format.html # index.html.erb
@@ -43,6 +43,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(params[:activity])
     @activity.user_id = current_user.id
+    @activity.initialdate = Time.now
     
     respond_to do |format|
       if @activity.save

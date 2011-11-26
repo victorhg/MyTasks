@@ -2,26 +2,27 @@
   = f.label :name, t("activerecord.attributes.activity.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
   %span.description Ex: a simple text
+
 .group
-  = f.label :initialdate, t("activerecord.attributes.activity.initialdate", :default => "Initialdate"), :class => :label
-  = f.datetime_select :initialdate, :class => 'datetime_select'
-  %span.description Ex: a simple text
-.group
-  = f.label :enddate, t("activerecord.attributes.activity.enddate", :default => "Enddate"), :class => :label
+  = f.label :enddate, t("activerecord.attributes.activity.enddate", :default => "End date"), :class => :label
   = f.datetime_select :enddate, :class => 'datetime_select'
   %span.description Ex: a simple text
+
 .group
   = f.label :description, t("activerecord.attributes.activity.description", :default => "Description"), :class => :label
   = f.text_area :description, :class => 'text_area'
   %span.description Ex: a simple text
+
 .group
   = f.label :status_id, t("activerecord.attributes.activity.status_id", :default => "Status"), :class => :label
   = f.collection_select(:status_id, Status.all, :id, :name, :prompt => true ,:class => 'number_field')
   %span.description Ex: a simple text
+
 .group
   = f.label :priority_id, t("activerecord.attributes.activity.priority_id", :default => "Priority"), :class => :label
   = f.collection_select(:priority_id, Priority.all, :id, :name, :prompt => true ,:class => 'number_field')
   %span.description Ex: a simple text
+
 .group.navform.wat-cf
   %button.button{:type => "submit"}
     = image_tag("web-app-theme/icons/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}")
