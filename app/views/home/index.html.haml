@@ -24,7 +24,7 @@
     %h2.title Activities Ending Today
     .inner
       %p.first
-        = show_activities_end_today_count @activity_count
+        = show_activities_end_today_count @activities_end_today.size
 
     .inner
       - if @activities_end_today.size > 0
