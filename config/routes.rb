@@ -1,4 +1,8 @@
 MyTasks::Application.routes.draw do
+  match '/appconfigs/about/' => 'appconfigs#about'
+  
+  resources :appconfigs
+
   resources :activities
 
   resources :priorities
