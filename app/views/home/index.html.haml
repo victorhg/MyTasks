@@ -1,14 +1,14 @@
 #block-text.block
   .content
     %h2.title Home
-    .inner
-      %p.first
-        = show_activity_count @activity_count
-        = current_user.email
     
     %h2.title Your Activities
     .inner
-      - if @activity_count.size > 0
+      %p.first
+        = show_activity_count @activity_count
+
+    .inner
+      - if @activity_count > 0
         %p.first
           %table.table
             %tr
@@ -22,6 +22,10 @@
                   = list.size.to_s
 
     %h2.title Activities Ending Today
+    .inner
+      %p.first
+        = show_activities_end_today_count @activity_count
+
     .inner
       - if @activities_end_today.size > 0
         %p.first
