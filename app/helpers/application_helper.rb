@@ -28,4 +28,14 @@ module ApplicationHelper
     end
   end
   
+  def show_late_activities(quantity)
+    if quantity == 0
+      'You don\'t have any late activity !'
+    elsif quantity == 1
+      'You have one late activity !'
+    else
+      'You have ' + quantity.to_s + ' late activities !'
+    end
+  end
+  
 end

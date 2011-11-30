@@ -1,8 +1,19 @@
 A simple rails app to control your tasks.
 
+#########################################################################################
+### I Want to make a change to use MongoDB. If someone want to help, email me. Thanks ###
+###                                                                                   ###
+###    I'am learning Ruby on Rails, so if you see something that needs a better       ###
+### solution, please email me, and we will fix this together. :)                      ###
+###                                                                                   ###
+#########################################################################################
+
+
 Now it has:
 	* Activities section, where you can save your activities.
 	* You can save Statuses and Priorities for your activities.
+	* AppConfigs for some configurations of the app.
+	* Home Page that shows all the user activities, activities ending on the day and late activities.
 	
 For the future:
 	* Attach files to your activity.
@@ -11,8 +22,8 @@ For the future:
 	* Create a Manager that can create projects and delegate activities to users.
 
 This app uses:
-	* Rails: 3.1.1
-	* Ruby : 1.9.3-p0
+	* Rails: >= 3.1.1
+	* Ruby : >= 1.9.3-p0
 	* Devise
 	* Kaminari
 	* Web App Theme
@@ -21,6 +32,7 @@ Install:
 	* $ git clone git@github.com:robsonarduin/MyTasks
 	* $ cd MyTasks
 	* $ bundle install
+	* $ rake db:create:all
 	* $ rake db:migrate
 	* $ rails s
 	

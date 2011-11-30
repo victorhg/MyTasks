@@ -42,6 +42,31 @@
                   = activity.status.name
                 %td
                   = activity.priority.name
+
+    %h2.title Late Activities
+    .inner
+      %p.first
+        = show_late_activities @activities_late.size
+
+    .inner
+      - if @activities_late.size > 0
+        %p.first
+          %table.table
+            %tr
+              %th.first Name
+              %th.first Status
+              %th.first Priority
+              %th.last End Date
+            - @activities_late.each do |activity|
+              %tr
+                %td
+                  = activity.name
+                %td
+                  = activity.status.name
+                %td
+                  = activity.priority.name
+                %td 
+                  = show_date_time activity.enddate
             
 
 - content_for :sidebar, render(:partial => 'sidebar')
