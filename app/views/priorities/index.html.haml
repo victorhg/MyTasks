@@ -13,7 +13,8 @@
           %th.first ID
           %th
             = t("activerecord.attributes.priority.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th
+            = t("web-app-theme.created_at", :default => "Created at")
           %th.last &nbsp;
         - @priorities.each do |priority|
           %tr{:class => cycle("odd", "even")}

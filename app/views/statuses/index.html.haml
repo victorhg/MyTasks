@@ -13,7 +13,8 @@
           %th.first ID
           %th
             = t("activerecord.attributes.status.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th
+            = t("web-app-theme.created_at", :default => "Created at")
           %th.last &nbsp;
         - @statuses.each do |status|
           %tr{:class => cycle("odd", "even")}

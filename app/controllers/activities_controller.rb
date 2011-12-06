@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     #@activities = Activity.all
-	  @activities = Activity.where("user_id = ?", current_user.id).page(params[:page])
+	  @activities = Activity.where("user_id = ?", current_user.id).order('created_at DESC').page(params[:page])
 	  
     respond_to do |format|
       format.html # index.html.erb

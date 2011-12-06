@@ -13,8 +13,16 @@
           %th.first ID
           %th
             = t("activerecord.attributes.activity.name", :default => t("activerecord.labels.name", :default => "Name"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th
+            = t("web-app-theme.created_at", :default => "Created at")
+          %th
+            Status
+          %th
+            Priority
+          %th
+            End Date
           %th.last &nbsp;
+
         - @activities.each do |activity|
           %tr{:class => cycle("odd", "even")}
             %td
@@ -23,6 +31,12 @@
               = link_to activity.name, activity_path(activity)
             %td
               = show_date_time activity.created_at
+            %td
+              = activity.status.name
+            %td
+              = activity.priority.name
+            %td
+              = show_date_time activity.enddate
             %td.last
               = link_to "#{t("web-app-theme.show", :default => "Show")}", activity_path(activity)
               |

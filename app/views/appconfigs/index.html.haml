@@ -15,8 +15,10 @@
           %th.first ID
           %th
             = t("activerecord.attributes.appconfig.description", :default => t("activerecord.labels.description", :default => "Description"))
-          %th= t("web-app-theme.created_at", :default => "Created at")
+          %th
+            = t("web-app-theme.created_at", :default => "Created at")
           %th.last &nbsp;
+
         - @appconfigs.each do |appconfig|
           %tr{:class => cycle("odd", "even")}
             %td
