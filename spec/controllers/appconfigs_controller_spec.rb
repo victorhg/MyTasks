@@ -19,12 +19,13 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe AppconfigsController do
+  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # Appconfig. As you add validations to Appconfig, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:description => "STATUS", :value => 1}
   end
 
   describe "GET index" do

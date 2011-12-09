@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "activities/edit.html.haml" do
   before(:each) do
     @activity = assign(:activity, stub_model(Activity,
-      :name => "MyString",
-      :description => "MyText",
+      :name => "RSpec Activity",
+      :description => "RSpec Activity Description",
       :status_id => 1,
       :priority_id => 1
     ))

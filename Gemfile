@@ -18,7 +18,8 @@ group :development, :test do
 	gem 'haml-rails'
 	gem 'hpricot'
 	gem 'ruby_parser'
-	gem 'web-app-theme' , ' ~> 0.8.0'
+	gem 'web-app-theme', ' ~> 0.8.0'
+	gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required

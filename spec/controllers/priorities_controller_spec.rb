@@ -19,12 +19,13 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe PrioritiesController do
+  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # Priority. As you add validations to Priority, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => "RSpec Priority"}
   end
 
   describe "GET index" do

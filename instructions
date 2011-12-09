@@ -1,0 +1,11 @@
+To generate a theme with web app theme
+	* $ rails g web_app_theme:theme --engine=haml --app-name="My App"
+	
+To generate a new scaffold
+	* $ rails g scaffold new_model attribute_1:string attribute_2:text attribute_3:datetime
+	
+To overwrite generated view files to web_app_theme
+	* $ rails g web_app_theme:themed new_model --will-paginate --engine=haml
+	* change the controller and index to use kaminari instead of will-paginate
+	
+
