@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "activities/edit.html.haml" do
+describe "activities/edit.html.haml" do  
   before(:each) do
     @activity = assign(:activity, stub_model(Activity,
       :name => "RSpec Activity",

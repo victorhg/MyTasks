@@ -1,4 +1,8 @@
 MyTasks::Application.routes.draw do
+  resources :user_types
+
+  resources :projects
+
   match '/appconfigs/about/' => 'appconfigs#about'
   
   resources :appconfigs

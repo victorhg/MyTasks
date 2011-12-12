@@ -1,3 +1,8 @@
+.group  
+  = f.label :project_id, t("activerecord.attributes.activity.project_id", :default => "Projects"), :class => :label
+  = f.collection_select(:project_id, Project.all, :id, :name, :prompt => true ,:class => 'number_field')
+  %span.description Select One
+
 .group
   = f.label :name, t("activerecord.attributes.activity.name", :default => "Name"), :class => :label
   = f.text_field :name, :class => 'text_field'
@@ -16,12 +21,12 @@
 .group
   = f.label :status_id, t("activerecord.attributes.activity.status_id", :default => "Status"), :class => :label
   = f.collection_select(:status_id, Status.all, :id, :name, :prompt => true ,:class => 'number_field')
-  %span.description Ex: a simple text
+  %span.description Select One
 
 .group
   = f.label :priority_id, t("activerecord.attributes.activity.priority_id", :default => "Priority"), :class => :label
   = f.collection_select(:priority_id, Priority.all, :id, :name, :prompt => true ,:class => 'number_field')
-  %span.description Ex: a simple text
+  %span.description Select One
 
 .group.navform.wat-cf
   %button.button{:type => "submit"}
