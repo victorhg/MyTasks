@@ -8,11 +8,15 @@ A simple rails app to control your tasks.
 ###                                                                                   ###
 #########################################################################################
 
+The seeds.rb has some defualt data for the application like the admin user.
+  * user admin@admin.com - pass adminadmin
 
 Now it has:
 	* Activities section, where you can save your activities.
 	* You can save Statuses and Priorities for your activities.
 	* AppConfigs for some configurations of the app.
+	* Projects
+	* User types for creating different types o users, like Admin, Manager, Developer and so on.
 	* Home Page that shows all the user activities, activities ending on the day and late activities.
 	
 For the future:
@@ -34,6 +38,7 @@ Install:
 	* $ bundle install
 	* $ rake db:create:all
 	* $ rake db:migrate
+	* $ rake db:seed (Creates default data, you can drop the data, just remenber to create an admin user, using the default admin, and then you can remove the default admin user)
 	* $ rails s
 	
 Thanks to:
