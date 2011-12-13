@@ -1,0 +1,11 @@
+#block-text.block
+  .content
+    %h2.title Admin Page
+    .inner
+      %p.first= link_to "#{t("web-app-theme.new", :default => "Status")}", new_status_path
+      %p.first= link_to "#{t("web-app-theme.new", :default => "Priority")}", new_priority_path
+      %p.first= link_to "#{t("web-app-theme.new", :default => "App Config")}", new_appconfig_path
+      %p.first= link_to "#{t("web-app-theme.new", :default => "User Type")}", new_user_type_path
+	
+    
+- content_for :sidebar, render(:partial => 'sidebar')

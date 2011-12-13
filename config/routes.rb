@@ -1,4 +1,6 @@
 MyTasks::Application.routes.draw do
+  get "admin/index"
+
   resources :user_types
 
   resources :projects
